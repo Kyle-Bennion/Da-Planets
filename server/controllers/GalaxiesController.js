@@ -51,7 +51,7 @@ export class GalaxiesController extends BaseController {
 
   async delete(req, res, next) {
     try {
-      await.galaxyService.delete(req.params.id)
+      await galaxyService.delete(req.params.id)
       res.send("Ahh HAHAHA Deleted")
     } catch (error) {
       next(error)

@@ -20,7 +20,7 @@ class GalaxyService {
   }
 
   async edit(update) {
-    let updated = await dbContext.Galaxy.findOneAndUpdate({ _id: update.id }, update.{ new: true })
+    let updated = await dbContext.Galaxy.findOneAndUpdate({ _id: update.id }, update, { new: true })
     if (!updated) {
       throw new BadRequest("invalid id")
     }
