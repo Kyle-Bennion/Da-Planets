@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 const Schema = mongoose.Schema;
-
+const ObjectId = Schema.Types.ObjectId
 
 const Star = new Schema({
-  name: { type: String, required: true }
-  Galaxy: { type: String, ref: "Galaxy" }
+  name: { type: String, required: true },
+  galaxy: { type: ObjectId, ref: "Galaxy" }
 },
   { timestamps: true, toJSON: { virtuals: true } }
 );
